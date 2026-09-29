@@ -1,0 +1,12 @@
+[
+{
+  "VALID_USERNAME": "Admin",
+  "VALID_PASSWORD": "admin123",
+  "INVALID_USERNAME": "invalid-user",
+  "INVALID_PASSWORD": "invalid-password",
+  "TARGET_USERNAME": "fuad_855850",
+  "LEAVE_FROM_DATE" : "2026-10-09",   
+  "LEAVE_TO_DATE" :  "2026-11-09"
+
+}
+]

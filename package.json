@@ -18,7 +18,8 @@
   "homepage": "https://github.com/cuditore/Ostad-Sqa_course-final-project#readme",
   "devDependencies": {
     "@playwright/test": "^1.63.0",
-    "@types/node": "^26.6.3"
+    "@types/node": "^26.6.3",
+    "allure-playwright": "^3.13.0"
   },
   "dependencies": {
     "dotenv": "^18.0.4"

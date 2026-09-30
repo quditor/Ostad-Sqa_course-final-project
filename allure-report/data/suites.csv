@@ -1,0 +1,2 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","5528","displays an error for invalid login credentials @Smoke","Chrome","2026-09-30","passed","2026-09-30","","InvalidLogin.spec.js","",""

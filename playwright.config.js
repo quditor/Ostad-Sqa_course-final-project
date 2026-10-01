@@ -1,5 +1,4 @@
 const { devices } = require('@playwright/test');
-const { permission } = require('node:process');
 
 // @ts-check
 require('dotenv').config();
@@ -14,30 +13,31 @@ const config = ({
     timeout: 15000
   },
 
-  reporter: 'html',
-//  use: {
- //   browserName: 'chromium',
- //   headless: true,
- //   navigationTimeout: 60 * 1000, // Explicitly give page.goto extra breathing room
-  //}
-  projects:[ 
+  workers: 1, // run tests one after another
+  retries: process.env.CI ? 2 : 0,
+  forbidOnly: !!process.env.CI,
 
+  reporter: [
+    ['list'],
+    ['html', { outputFolder: 'playwright-report', open: 'never' }],
+    ['allure-playwright', { resultsDir: 'allure-results' }],
+  ],
+
+  projects: [
     {
-    name: 'Chrome',
-    use:{
-      browserName:'chromium',
-      headless: true,
-      actionTimeout: 10*1000,
-      navigationTimeout: 30*1000,
-      screenshot:'only-on-failure',
-      trace:'on',
-     //...devices['Pixel 10 Pro'],
-     ignoreHTTPSErrors:true,
-     permissions:['geolocation'],
-
+      name: 'Chrome',
+      use: {
+        browserName: 'chromium',
+        headless: true,
+        actionTimeout: 10 * 1000,
+        navigationTimeout: 30 * 1000,
+        screenshot: 'only-on-failure',
+        trace: 'on',
+        ignoreHTTPSErrors: true,
+        permissions: ['geolocation'],
+      },
     },
-  },
-], 
+  ],
 });
 
 module.exports = config;

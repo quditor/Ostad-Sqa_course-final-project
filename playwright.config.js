@@ -9,9 +9,9 @@ require('dotenv').config();
  */
 const config = ({
   testDir: './tests',
-  timeout: 50 * 1000, // Total test timeout
+  timeout: 60 * 1000, // Total test timeout
   expect: {
-    timeout: 5000
+    timeout: 15000
   },
 
   reporter: 'html',

@@ -3,7 +3,7 @@ const {POManager} = require('../pageObjects/POManager');
 
 const dataset = JSON.parse(JSON.stringify(require('../utils/orangeHrmTestData.json')));
 for (const data of dataset){
-test('edits a user role and verifies the chnage persists after page refresh ', async({page}) => {
+test('edits a user role and verifies the change persists after page refresh ', async({page}) => {
     const poManager = new POManager(page);
     const loginPage = poManager.getLoginPage();
     const dashboardPage = poManager.getDashBoardPage();
